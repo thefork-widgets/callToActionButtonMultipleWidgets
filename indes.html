@@ -1,0 +1,75 @@
+/* Widgets to add */
+<div class="tab-content">
+ <h1>Elige restaurante y haz tu reserva</h1>
+ <div id="selector">
+  <ul>
+   <li><a href="#res1">Les Dues Sicílies Gastro Bar</a></li>
+   <li><a href="#res2">Les Dues Sicílies</a></li>
+ </ul>
+</div>
+</br>
+<div  class="tab-pane" id="res1"><div align="center">
+  <iframe src="https://module.lafourchette.com/es_ES/module/375829-489bc" width="100%" height="700" marginwidth="0" marginheight="0" scrolling="No" frameborder="0"></iframe>
+</div></div>
+<div class="tab-pane" id="res2"><div align="center">
+  <iframe src="https://module.lafourchette.com/es_ES/module/332497-eac1a" width="100%" height="700" marginwidth="0" marginheight="0" scrolling="No" frameborder="0"></iframe>
+</div></div>
+</div>
+
+/* media queries */
+<style type="text/css">
+
+.tab-pane{
+  position: relative;
+  margin-left: 4%;
+  float: left;
+  width: 40%;
+  height: 700px;
+}
+#selector{
+  display: none;
+}
+#selector ul{
+  list-style: none;
+}
+.tab-content h1{
+  text-align: center;
+}
+
+@media only screen and (max-width : 855px) { 
+  .tab-pane{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 900px;
+  }
+  #selector{
+    display: block; 
+  }
+}
+</style>
+
+/* hide catalan widget */
+<script type="text/javascript">
+
+  window.onload= tranlations();
+  $('body').click(tranlations);
+
+  function tranlations(){
+    var pathName = window.location.pathname;
+
+    if(pathName.search( 'ca_ES' )!=-1){ 
+      $(document).ready(function(){
+        $(".main").hide();
+        $(".tab-content").show();
+      });    
+    }else{
+      $(".tab-content").hide();
+      $(".main").show();
+
+    }
+
+  }
+</script>
+
+
