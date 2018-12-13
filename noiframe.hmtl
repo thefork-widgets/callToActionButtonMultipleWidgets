@@ -1,0 +1,83 @@
+<!-- Widgets to add *-->
+<center><div class="tab-content">
+ <h1>Selecciona tu restaurante</h1>
+ <div id="selector">
+  <center><ul>
+   <li><a href="WIDGET LINK 1" target="blank">RESTAURANT 1</a></li>
+   <li><a href="WIDGET LINK 2" target="blank">RESTAURANT 2</a></li>
+
+ </ul></center>
+</div>
+</br>
+
+
+<!-- media queries -->
+<style type="text/css">
+.tab-pane{
+  position: relative;
+  margin-left: 4%;
+  width: 50%;
+  height: 700px;
+}
+#selector{
+ 
+}
+#selector ul{
+  list-style: none;
+margin-left:-25px;
+}
+#selector li{
+  list-style: none;
+  display: block;
+  background-color: #589442;
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+  width: 500px;
+  margin-top: 10px;
+  margin-right: 15px;
+  font-weight: bold;
+}
+#selector a{
+  color: #fff;
+  text-decoration: none;
+}
+.tab-content h1{
+  text-align: center;
+}
+@media only screen and (max-width : 855px) { 
+  .tab-pane{
+    position: relative;
+    float: left;
+    width: 85%;
+    height: 900px;
+  }
+  #selector{
+    display: block;
+  }
+  #selector li{
+  width: 85%;
+}
+.ui-widget-content {
+    background: #fff;
+}
+  }
+</style>
+
+<!-- hide catalan widget -->
+<script type="text/javascript">
+  window.onload= tranlations();
+  $('body').click(tranlations);
+  function tranlations(){
+    var pathName = window.location.pathname;
+    if(pathName.search( 'ca_ES' )!=-1){ 
+      $(document).ready(function(){
+        $(".main").hide();
+        $(".tab-content").show();
+      });    
+    }else{
+      $(".tab-content").hide();
+      $(".main").show();
+    }
+  }
+</script>
